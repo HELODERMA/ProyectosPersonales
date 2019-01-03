@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping package="com.novellius.domain">
+    <!--Mapear el nombre de la clase java con nombre de la tabla mysql-->
+    <class name="Tramite" table="Tramite">
+        <!--Mapeo del ID similar al se la clase-->
+        <id name="idTram" column="idTram">
+            <generator class="native"/>
+        </id>
+        <!--Mapeo de las propiedades-->
+        <!--Si la columna en la DB se llama igual podemos omitir el COLUMN-->
+        <!--<property name="tipoTram" type="string" column="tipoTram"/>-->
+        <property name="tipoTram" type="string"/>
+        <property name="fhcTram" type="timestamp"/>
+    </class>
+</hibernate-mapping>	
