@@ -32,7 +32,6 @@ $(document).ready(function() {
         }
     });
 
-
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 0,
@@ -60,3 +59,45 @@ $(document).ready(function() {
         }
     });
 });
+
+// Barra Active josue
+
+$(document).ready(function() {
+    $(document).on("scroll", onScroll);
+    //smoothscroll
+    var menus = $("#menu-principal ul li a");
+
+    $(menus).on('click', function(e) {
+        e.preventDefault();
+        $(document).off("scroll");
+        $('a').each(function() {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top + 2
+        }, 500, 'swing', function() {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event) {
+    var barramedida = $('.encabezado').outerHeight();
+    var scrollPos = $(document).scrollTop() + barramedida;
+    $('#menu-principal ul li a').each(function() {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if ((refElement.position().top) <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('#menu-principal ul li a').removeClass("active");
+            currLink.addClass("active");
+        } else {
+            currLink.removeClass("active");
+            // $('#menu-principal ul li:last-child a').addClass('active');
+        }
+    });
+}

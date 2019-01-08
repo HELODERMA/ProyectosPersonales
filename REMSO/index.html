@@ -33,8 +33,8 @@
                     <img class="d-sm-none" src="images/logo.png" alt="Logo del sitio">
                 </a>
 
-                <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
-                        <i class="fas fa-search"></i> </button>
+                <!-- <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
+                        <i class="fas fa-search"></i> </button> -->
                 <button type="button" class="boton-menu d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false"><i class="fas fa-bars"></i> </button>
 
                 <!-- Formulario Desplegable -->
@@ -48,12 +48,17 @@
                 <!-- Menu desplegable -->
                 <nav class="collapse" id="menu-principal">
                     <ul>
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html">Problemática</a></li>
-                        <li><a class=" d-md-none d-lg-block" href="index.html">Inovación</a></li>
-                        <li><a href="index.html">Nosotros</a></li>
-                        <li><a class=" d-md-none d-lg-block" href="index.html">Equipo</a></li>
-                        <li><a href="index.html">Ayudanos</a></li>
+                        <li><a class="active" href="#inicio">Inicio</a></li>
+
+                        <li><a href="#problematica">Problemática</a></li>
+
+                        <li><a href="#innovacion" class="d-md-none d-lg-block" href="">Inovación</a></li>
+
+                        <li><a href="#nosotros" href="">Nosotros</a></li>
+
+                        <li><a href="#team" class="d-md-none d-lg-block" href="">Equipo</a></li>
+
+                        <li><a href="#cambio" href="index.html">Ayudanos</a></li>
                     </ul>
                 </nav>
             </div>
@@ -83,7 +88,7 @@
                     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut, architecto eaque pariatur, dolore dicta qui dignissimos facere odio alias, odit dolorum culpa obcaecati quod itaque et blanditiis eligendi consectetur?</p>
                 </div>
                 <div class="col-xs-12 col-md-4 col-xl-3 imagen_problematica">
-                    <img class="wow bounceInDown" data-wow-duration="2s" data-wow-delay=".6s" src="images/problematica.svg" alt="Problematica">
+                    <img class="wow bounceInDown" data-wow-duration="2s" data-wow-delay=".3s" src="images/problematica.svg" alt="Problematica">
                 </div>
             </div>
         </div>
@@ -106,14 +111,14 @@
                             <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                     </li>
-                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".7s">
+                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".3s">
                         <i class="fas fa-search"></i>
                         <div class="contenedor-eleccion">
                             <h4>Mejora la de la comunidad.</h4>
                             <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                     </li>
-                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay="1.1s">
+                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".3s">
                         <i class="fas fa-globe-americas"></i>
                         <div class="contenedor-eleccion">
                             <h4>Reduce la huella ecológica humana en el ambiente.</h4>
@@ -127,21 +132,21 @@
                 </div>
 
                 <ul class="col-6 col-lg-4 text-center text-lg-right">
-                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".5s">
+                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".3s">
                         <i class="fas fa-search"></i>
                         <div class="contenedor-eleccion">
                             <h4>Manejo de desechos.</h4>
                             <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, con elit.</p>
                         </div>
                     </li>
-                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".7s">
+                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".3s">
                         <i class="fas fa-users"></i>
                         <div class="contenedor-eleccion">
                             <h4>Manejo correcto asasasass.</h4>
                             <p class="d-none d-lg-block">Lorem ipsum dolor sit am elit.</p>
                         </div>
                     </li>
-                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay="1.3s">
+                    <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".3s">
                         <i class="fas fa-globe-americas"></i>
                         <div class="contenedor-eleccion">
                             <h4>Manejo correcto de desechos.</h4>
@@ -156,7 +161,7 @@
 
     <!-- Nosotros -->
 
-    <main class="nosotros py-2" id="nosotros">
+    <section class="nosotros py-2" id="nosotros">
         <div class="nosostros-titulo">
             <h2 class="h3 text-center font-weight-bold">Nosostros</h2>
             <p class="text-center">Quienes somos? y ?Que hacemos?</p>
@@ -164,29 +169,29 @@
 
         <div class="container py-2">
             <h2 class="h4 text-center font-weight-bold">TRABAJAMOS PARA <span>TU <br> BIENESTAR</span></h2>
-            <div class="row text-center">
-                <article class="col-6 col-md-3 wow bounceInLeft" data-wow-delay=".3s">
+            <div class="row text-center wow zoomIn" data-wow-delay=".3s">
+                <article class="col-6 col-md-3">
                     <img src="images/inovacion.svg" alt="">
                     <h4>Innovacion</h4>
                     <p class="d-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque necessitatibus dignissimos sequi pariatur ratione facilis ipsam. Ipsum accusantium a inventore tenetur tempore, ducimus eveniet quisquam reprehenderit non, dolores
                         deserunt.
                     </p>
                 </article>
-                <article class="col-6 col-md-3 wow bounceInUp" data-wow-delay=".7s">
+                <article class="col-6 col-md-3">
                     <img src="images/empatia.svg" alt="">
                     <h4>Empatia con tigo</h4>
                     <p class="d-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque necessitatibus dignissimos sequi pariatur ratione facilis ipsam. Ipsum accusantium a inventore tenetur tempore, ducimus eveniet quisquam reprehenderit non, dolores
                         deserunt.
                     </p>
                 </article>
-                <article class="col-6 col-md-3 wow bounceInDown" data-wow-delay=".3s">
+                <article class="col-6 col-md-3">
                     <img src="images/responsabilidad.svg" alt="">
                     <h4>Confianza desinterezada</h4>
                     <p class="d-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque necessitatibus dignissimos sequi pariatur ratione facilis ipsam. Ipsum accusantium a inventore tenetur tempore, ducimus eveniet quisquam reprehenderit non, dolores
                         deserunt.
                     </p>
                 </article>
-                <article class="col-6 col-md-3 wow bounceInRight" data-wow-delay=".5s">
+                <article class="col-6 col-md-3">
                     <img src="images/confianza.svg" alt="">
                     <h4>Responsabilidad</h4>
                     <p class="d-none d-md-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque necessitatibus dignissimos sequi pariatur ratione facilis ipsam. Ipsum accusantium a inventore tenetur tempore, ducimus eveniet quisquam reprehenderit non, dolores
@@ -194,12 +199,14 @@
                     </p>
                 </article>
             </div>
+
             <!-- Falta lo de vision mision -->
+
             <div class="row mb-2">
-                <div class="col-12 col-md-8 mt-1">
+                <div class="col-12 col-md-8 mt-1 wow bounceInUp" data-wow-delay=".3s">
 
                     <div class="accordion" id="accordionExample">
-                        <div class="card wow bounceInRight" data-wow-delay=".5s">
+                        <div class="card">
 
                             <button class="btn nosotros-boton mb-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Misión
@@ -213,7 +220,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card wow bounceInLeft" data-wow-delay=".5s">
+                        <div class="card">
                             <button class="btn nosotros-boton collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Visión
                             </button>
@@ -228,21 +235,22 @@
                     </div>
 
                 </div>
-                <img class="d-none d-md-block col-md-4 wow fadeInDown" data-wow-delay=".3s" src="images/problematica.svg" alt="">
+                <img class="d-none d-md-block col-md-4 wow zoomIn" data-wow-delay=".3s" src="images/problematica.svg" alt="">
             </div>
+
         </div>
-    </main>
+    </section>
 
     <!-- Euipo -->
     <section class="team py-3" id="team">
         <div class="container text-center">
-            <h2 class="h3 text-center font-weight-bold mb-4 wow fadeInUp" data-wow-delay=".3s">Nuestro Equipo</h2>
+            <h2 class="h3 text-center font-weight-bold mb-4">Nuestro Equipo</h2>
 
             <div class="owl-carousel">
 
                 <a href="#">
                     <img src="images/Untitled-3.png" alt="">
-                    <h4>Violeta Perez <br><span>CEO</span></h4>
+                    <h4>Violeta Perez <br><span class="wow zoomIn" data-wow-delay=".3s">CEO</span></h4>
                 </a>
 
             </div>
@@ -257,14 +265,14 @@
                 <ul class="col-6">
                     <li class="wow zoomInRight" data-wow-delay=".3s">
                         <a href=""><img src="images/gotas.svg" alt=""></a>
-                        <p class="remso_boton wow jello" data-wow-delay=".8s">Donar</p>
+                        <p class="remso_boton wow jello" data-wow-delay=".3s">Donar</p>
                     </li>
                 </ul>
                 <ul class="col-6">
                     <li class="wow zoomInLeft" data-wow-delay=".3s">
 
                         <a href=""><img src="images/gotas.svg" alt=""></a>
-                        <p class="remso_boton wow jello" data-wow-delay=".8s">Unirme</p>
+                        <p class="remso_boton wow jello" data-wow-delay=".3s">Unirme</p>
                     </li>
                 </ul>
             </div>

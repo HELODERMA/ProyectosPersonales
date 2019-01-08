@@ -409,7 +409,7 @@
                                 border-bottom: 4px solid transparent;
                                 transition: all .5s ease;
                             }
-                            #menu-principal ul li.active a,
+                            #menu-principal ul li a.active,
                             #menu-principal ul li a:hover {
                                 color: var(--principal);
                                 border-bottom: 4px solid;
