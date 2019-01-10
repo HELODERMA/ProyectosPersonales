@@ -5,7 +5,7 @@ $(document).ready(function() {
     // All animations will take exactly 500ms
     var scroll = new SmoothScroll('a[href*="#"]', {
         speed: 1000,
-        offset: 87,
+        offset: 83.6,
         speedAsDuration: true
     });
 

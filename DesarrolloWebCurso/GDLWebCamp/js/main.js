@@ -138,6 +138,14 @@ $(function() {
     // LETTERING TITTLE
     $('.nombre-sitio').lettering();
 
+    //Agregar clase ACTIVE al menu jquery and php
+
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+    $('body.reservaciones .navegacion-principal a:contains("Reservaciones")').addClass('activo');
+
+
     // Menu fijo
 
     let windowHeight = $(window).height();
@@ -205,6 +213,13 @@ $(function() {
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     })
+
+    // Colorbox
+
+    $('.invitado-info').colorbox({
+        inline: true,
+        width: "60%"
+    });
 
 
 

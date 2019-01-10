@@ -1100,6 +1100,14 @@ div.dia i {
 /* End Calendario */
 
 
+/* Colorbox */
+
+div.cboxElement {
+    padding: 30px !important;
+    text-align: center;
+}
+
+
 /* Fin de mi codgo */
 
 .hidden {
