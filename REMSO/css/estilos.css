@@ -1,504 +1,538 @@
-                        /* Patron de colores */
-                        
-                        body {
-                            overflow-x: hidden !important;
-                            background-color: white;
-                            font-family: 'Open Sans', sans-serif;
-                            color: var(--texto);
-                        }
-                        
-                         :root {
-                            --texto: #111111;
-                            --principal: #b11f72;
-                            --secundario: #2b5998;
-                        }
-                        
-                        html {
-                            font-size: 15px;
-                        }
-                        
-                        header.encabezado {
-                            background-color: var(--texto);
-                            color: #fff;
-                            padding: .5rem 0;
-                            transition: all .5s ease;
-                        }
-                        
-                        header.encabezado .contenedor {
-                            display: flex;
-                            align-items: center;
-                            flex-wrap: wrap;
-                        }
-                        
-                        header.encabezado.fondo-menu {
-                            padding: 1rem 0;
-                        }
-                        
-                        .encabezado .contenedor a.logo {
-                            width: 160px;
-                        }
-                        /* ENCABEZADO */
-                        
-                        section.bienvenidos {
-                            background: url(../images/fondo.jpg) no-repeat center top;
-                            color: #fff;
-                            background-size: cover;
-                            background-attachment: fixed;
-                            /* width: 100vw; */
-                            height: 100vh;
-                            display: flex;
-                            flex-direction: column;
-                        }
-                        /* Botones buscar y menu */
-                        
-                        .boton-buscar,
-                        .boton-menu {
-                            border: 0;
-                            font-size: 2.6rem;
-                            margin: 0;
-                            padding: 0 .5rem;
-                            background: transparent;
-                            color: #fff;
-                        }
-                        
-                        .boton-buscar:focus,
-                        .boton-menu:focus {
-                            outline: 0;
-                        }
-                        
-                        .boton-buscar {
-                            margin-left: auto;
-                            margin-right: .8rem;
-                        }
-                        /* Bloque buscar */
-                        
-                        #bloque-buscar {
-                            flex: 1 1 100%;
-                        }
-                        
-                        .contenedor-bloque-buscar {
-                            display: flex;
-                            height: 3rem;
-                            margin: 1rem 0;
-                        }
-                        
-                        .contenedor-bloque-buscar input[type="text"] {
-                            border: none;
-                            border-radius: 5px 0 0 5px;
-                            padding: 1rem;
-                            flex: 1 1 auto;
-                        }
-                        
-                        .contenedor-bloque-buscar input[type="submit"] {
-                            flex: 1 1 auto;
-                            border: none;
-                            border-radius: 0 5px 5px 0;
-                            background-color: var(--principal);
-                            color: #fff;
-                            float: 0 1 auto;
-                            padding: 0 1rem;
-                        }
-                        /* Menu principal */
-                        
-                        #menu-principal {
-                            flex: 1 1 100%;
-                        }
-                        
-                        #menu-principal ul {
-                            padding: 0;
-                            list-style: none;
-                            margin: 1rem 0 0 0;
-                            margin-top: 1rem;
-                        }
-                        
-                        #menu-principal ul a {
-                            display: block;
-                            padding: .8rem 0;
-                            text-align: center;
-                            color: #fff;
-                            text-transform: uppercase;
-                            border-top: 1px solid white;
-                            text-decoration: none;
-                        }
-                        
-                        #menu-principal ul a:hover,
-                        #menu-principal ul li.active a {
-                            color: var(--principal);
-                        }
-                        /* TExto Encabzado */
-                        
-                        .texto-encabezado {
-                            flex: 1 1 auto;
-                            display: flex;
-                            text-align: center;
-                            align-items: center;
-                        }
-                        
-                        .texto-encabezado h1 {
-                            font-size: 2.3rem;
-                            font-weight: 300;
-                            line-height: 1.2;
-                            margin-top: 4rem;
-                        }
-                        
-                        .texto-encabezado a {
-                            color: #fff;
-                            background-color: var(--principal);
-                            border-color: transparent;
-                            transition: all .5s ease;
-                        }
-                        
-                        .texto-encabezado a:hover,
-                        .texto-encabezado a:focus,
-                        .texto-encabezado a:active:hover {
-                            color: #fff;
-                            background-color: var(--secundario);
-                            border-color: transparent;
-                        }
-                        
-                        .flecha-bajar a {
-                            display: inline-block;
-                            color: #fff;
-                            font-size: 4rem;
-                            animation: flechaAnimada 2s ease-in-out infinite;
-                        }
-                        
-                        @keyframes flechaAnimada {
-                            from {
-                                transform: translateY(0)
+                            /* Patron de colores */
+
+                            body {
+                                overflow-x: hidden !important;
+                                background-color: white;
+                                font-family: 'Open Sans', sans-serif;
+                                color: var(--texto);
                             }
-                            50% {
-                                transform: translateY(6px)
+
+                            :root {
+                                --texto: #111111;
+                                --principal: #b11f72;
+                                --secundario: #2b5998;
                             }
-                            to {
-                                transform: translateY(0);
+
+                            html {
+                                font-size: 15px;
                             }
-                        }
-                        /* PROBLEMATICA */
-                        
-                        .problematica {
-                            background: var(--principal);
-                            color: #fff;
-                        }
-                        
-                        .problematica .container .row div p {
-                            text-align: justify;
-                        }
-                        
-                        .problematica img {
-                            width: 80%;
-                            margin: 0 auto;
-                            display: block;
-                            margin-bottom: 1rem;
-                        }
-                        /* INOVACION EN ACCIO */
-                        
-                        .inovacion {
-                            background: #fff;
-                        }
-                        
-                        .inovacion h2 span {
-                            color: var(--principal);
-                        }
-                        
-                        .inovacion ul,
-                        .inovacion li {
-                            list-style: none;
-                        }
-                        
-                        .inovacion ul li .fas {
-                            font-size: 2.3rem;
-                            background: var(--secundario);
-                            border-radius: 50%;
-                            width: 4.7rem;
-                            height: 4.7rem;
-                            line-height: 4.7rem;
-                            color: #fff;
-                        }
-                        
-                        .inovacion ul li .contenedor-eleccion h4 {
-                            font-size: 1.2rem;
-                            font-weight: bold;
-                            margin-top: .8rem;
-                        }
-                        
-                        .inovacion ul li {
-                            min-height: 9rem;
-                        }
-                        /*
-     * ─── NOSOTROS ───────────────────────────────────────────────────────────────────
-     */
-                        
-                        .nosotros {
-                            background-color: #fff;
-                        }
-                        
-                        .nosostros-titulo {
-                            background: url("../images/nosotros.png") no-repeat center center;
-                            background-size: cover;
-                            background-attachment: fixed;
-                            padding: 2rem;
-                            color: #fff;
-                        }
-                        
-                        .nosotros .container .row article h4 {
-                            font-size: 1.2rem;
-                            font-weight: bold;
-                            margin-top: .8rem;
-                        }
-                        
-                        .nosotros .container .row article img {
-                            width: 4.7rem;
-                            height: 4.7rem;
-                            transition: all 2s ease;
-                        }
-                        
-                        .nosotros .container .row article {
-                            min-height: 9rem;
-                            margin-top: 1rem;
-                        }
-                        
-                        .nosotros-boton {
-                            background-color: var(--principal) !important;
-                            text-decoration: none;
-                            padding: 1rem 2rem;
-                            color: #fff;
-                            transition: all .5s ease;
-                        }
-                        
-                        .nosotros-boton:hover {
-                            background-color: var(--secundario) !important;
-                            text-decoration: none;
-                        }
-                        
-                        .nosotros .container span {
-                            color: var(--principal);
-                        }
-                        /*
-     * ─── EQUIPO ─────────────────────────────────────────────────────────────────────
-     */
-                        
-                        .team {
-                            background: url("../images/fondoTeam.png") no-repeat center center;
-                            background-attachment: fixed !important;
-                        }
-                        
-                        .team h2 {
-                            color: #fff;
-                            margin: 1rem 0;
-                        }
-                        
-                        .team .owl-carousel a h4 {
-                            color: #fff;
-                        }
-                        
-                        .team .owl-carousel a h4 span {
-                            color: var(--principal);
-                            font-weight: bold;
-                        }
-                        
-                        .team .owl-carousel a img {
-                            margin-bottom: 1.3rem;
-                        }
-                        
-                        .team div.owl-nav {
-                            display: flex;
-                            justify-content: center;
-                        }
-                        
-                        .team div.owl-nav .owl-prev,
-                        .team div.owl-nav .owl-next {
-                            font-size: 3rem;
-                            color: var(--principal);
-                            transition: all .5s ease;
-                        }
-                        
-                        .team div.owl-nav .owl-prev {
-                            margin-right: 2rem;
-                        }
-                        
-                        .team div.owl-nav .owl-prev:hover,
-                        .team div.owl-nav .owl-next:hover {
-                            color: var(--secundario);
-                        }
-                        /* Agente de cambio */
-                        
-                        .cambio {
-                            background: white;
-                        }
-                        
-                        .cambio h2 {
-                            color: var(--principal);
-                            margin-bottom: 1rem;
-                        }
-                        
-                        .cambio .container .row ul li {
-                            list-style: none;
-                        }
-                        /*
-     * ─── FOOTER ─────────────────────────────────────────────────────────────────────
-     */
-                        
-                        footer.pie-pagina {
-                            background: var(--texto);
-                            color: #fff;
-                            text-align: center;
-                            font-size: .9rem;
-                        }
-                        
-                        .pie-pagina .redes-sociales {
-                            display: flex;
-                            justify-content: center;
-                            list-style: none;
-                            margin: 0;
-                            padding: 0;
-                        }
-                        
-                        .pie-pagina .redes-sociales a {
-                            color: var(--principal);
-                            font-size: 2rem;
-                            margin: 0 .5rem;
-                            opacity: .7;
-                            transition: all .5s ease;
-                        }
-                        
-                        .pie-pagina .redes-sociales a:hover {
-                            opacity: 1;
-                        }
-                        
-                        .arriba {
-                            position: fixed;
-                            display: none;
-                            bottom: .6rem;
-                            right: 1rem;
-                            font-size: 3rem;
-                            color: var(--principal);
-                            text-decoration: none;
-                            z-index: 3;
-                            line-height: 0;
-                            transition: all .5s ease;
-                        }
-                        
-                        .arriba:hover,
-                        .arriba:focus {
-                            outline: 0;
-                            text-decoration: none;
-                            color: var(--secundario);
-                        }
-                        /*
-     * ─── MEDIAQUERIES del navbar ───────────────────────────────────────────────────────────────
-     */
-                        
-                        @media (min-width:768px) {
-                            #menu-principal {
-                                height: auto !important;
-                                display: block;
-                                flex: 0 1 auto;
-                                margin-left: auto;
-                                order: 1;
-                            }
-                            #menu-principal ul {
-                                display: flex;
-                                margin: 0;
-                            }
-                            #menu-principal ul li a {
-                                padding: .8rem;
-                                text-transform: capitalize;
-                                margin: 0 .3rem;
-                                border-top: 0px;
-                                border-bottom: 4px solid transparent;
+
+                            header.encabezado {
+                                background-color: var(--texto);
+                                color: #fff;
+                                padding: .5rem 0;
                                 transition: all .5s ease;
                             }
-                            #menu-principal ul li a.active,
-                            #menu-principal ul li a:hover {
-                                color: var(--principal);
-                                border-bottom: 4px solid;
-                            }
-                            .boton-buscar {
-                                margin-left: 1rem;
-                                margin-right: 0;
-                                order: 2;
-                            }
-                            #bloque-buscar {
-                                order: 3;
-                                position: absolute;
-                                width: 20rem;
-                                right: 3rem;
-                                top: 3rem;
-                                transition: all .1s ease;
-                            }
-                            /* IMAGEN PROBLEMATICA */
-                            .problematica img {
-                                width: 100%;
-                                margin: 0;
-                            }
-                            .problematica div.imagen_problematica {
+
+                            header.encabezado .contenedor {
                                 display: flex;
+                                align-items: center;
+                                flex-wrap: wrap;
                             }
-                            /* Nootros */
-                            .nosotros .container .row article img {
-                                width: 10rem;
-                                height: 10rem;
+
+                            header.encabezado.fondo-menu {
+                                padding: 1rem 0;
                             }
-                            .nosotros .container .row article:hover img {
-                                transform: rotatey(360deg);
-                                transform-style: preserve-3d;
+
+                            .encabezado .contenedor a.logo {
+                                width: 160px;
                             }
-                            .nosotros .container .row article h4 {
-                                font-size: 1.5rem;
-                            }
-                            .nosotros article h4 {
-                                flex: 0 1 auto;
-                                height: 3rem;
-                            }
-                            /* Gotitas */
-                            .cambio div ul li img {
-                                width: 15rem;
-                            }
-                            .cambio div ul li {
+
+                            /* ENCABEZADO */
+
+                            section.bienvenidos {
+                                background: url(../images/fondo.jpg) no-repeat center top;
+                                color: #fff;
+                                background-size: cover;
+                                background-attachment: fixed;
+                                /* width: 100vw; */
+                                height: 100vh;
                                 display: flex;
                                 flex-direction: column;
+                            }
+
+                            /* Botones buscar y menu */
+
+                            .boton-buscar,
+                            .boton-menu {
+                                border: 0;
+                                font-size: 2.6rem;
+                                margin: 0;
+                                padding: 0 .5rem;
+                                background: transparent;
+                                color: #fff;
+                            }
+
+                            .boton-buscar:focus,
+                            .boton-menu:focus {
+                                outline: 0;
+                            }
+
+                            .boton-buscar {
+                                margin-left: auto;
+                                margin-right: .8rem;
+                            }
+
+                            /* Bloque buscar */
+
+                            #bloque-buscar {
+                                flex: 1 1 100%;
+                            }
+
+                            .contenedor-bloque-buscar {
+                                display: flex;
+                                height: 3rem;
+                                margin: 1rem 0;
+                            }
+
+                            .contenedor-bloque-buscar input[type="text"] {
+                                border: none;
+                                border-radius: 5px 0 0 5px;
+                                padding: 1rem;
+                                flex: 1 1 auto;
+                            }
+
+                            .contenedor-bloque-buscar input[type="submit"] {
+                                flex: 1 1 auto;
+                                border: none;
+                                border-radius: 0 5px 5px 0;
+                                background-color: var(--principal);
+                                color: #fff;
+                                float: 0 1 auto;
+                                padding: 0 1rem;
+                            }
+
+                            /* Menu principal */
+
+                            #menu-principal {
+                                flex: 1 1 100%;
+                            }
+
+                            #menu-principal ul {
+                                padding: 0;
+                                list-style: none;
+                                margin: 1rem 0 0 0;
+                                margin-top: 1rem;
+                            }
+
+                            #menu-principal ul a {
+                                display: block;
+                                padding: .8rem 0;
+                                text-align: center;
+                                color: #fff;
+                                text-transform: uppercase;
+                                border-top: 1px solid white;
+                                text-decoration: none;
+                            }
+
+                            #menu-principal ul a:hover,
+                            #menu-principal ul li.active a {
+                                color: var(--principal);
+                            }
+
+                            /* TExto Encabzado */
+
+                            .texto-encabezado {
+                                flex: 1 1 auto;
+                                display: flex;
+                                text-align: center;
                                 align-items: center;
                             }
-                            .cambio div ul li p.remso_boton {
+
+                            .texto-encabezado h1 {
+                                font-size: 2.3rem;
+                                font-weight: 300;
+                                line-height: 1.2;
+                                margin-top: 4rem;
+                            }
+
+                            .texto-encabezado a {
+                                color: #fff;
+                                background-color: var(--principal);
+                                border-color: transparent;
+                                transition: all .5s ease;
+                            }
+
+                            .texto-encabezado a:hover,
+                            .texto-encabezado a:focus,
+                            .texto-encabezado a:active:hover {
+                                color: #fff;
+                                background-color: var(--secundario);
+                                border-color: transparent;
+                            }
+
+                            .flecha-bajar a {
+                                display: inline-block;
+                                color: #fff;
+                                font-size: 4rem;
+                                animation: flechaAnimada 2s ease-in-out infinite;
+                            }
+
+                            @keyframes flechaAnimada {
+                                from {
+                                    transform: translateY(0)
+                                }
+
+                                50% {
+                                    transform: translateY(6px)
+                                }
+
+                                to {
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            /* PROBLEMATICA */
+
+                            .problematica {
+                                background: var(--principal);
+                                color: #fff;
+                            }
+
+                            .problematica .container .row div p {}
+
+                            .problematica img {
+                                width: 80%;
+                                margin: 0 auto;
+                                display: block;
+                                margin-bottom: 1rem;
+                            }
+
+                            /* INOVACION EN ACCIO */
+
+                            .inovacion {
+                                background: #fff;
+                            }
+
+                            .inovacion h2 span {
+                                color: var(--principal);
+                            }
+
+                            .inovacion ul,
+                            .inovacion li {
+                                list-style: none;
+                            }
+
+                            .inovacion ul li .fas {
+                                font-size: 2.3rem;
+                                background: var(--secundario);
+                                border-radius: 50%;
+                                width: 4.7rem;
+                                height: 4.7rem;
+                                line-height: 4.7rem;
+                                color: #fff;
+                            }
+
+                            .inovacion ul li .contenedor-eleccion h4 {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                margin-top: .8rem;
+                            }
+
+                            .inovacion ul li {
+                                min-height: 9rem;
+                            }
+
+                            /*
+     * ─── NOSOTROS ───────────────────────────────────────────────────────────────────
+     */
+
+                            .nosotros {
+                                background-color: #fff;
+                            }
+
+                            .nosostros-titulo {
+                                background: url("../images/nosotros.png") no-repeat center center;
+                                background-size: cover;
+                                background-attachment: fixed;
+                                padding: 2rem;
+                                color: #fff;
+                            }
+
+                            .nosotros .container .row article h4 {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                margin-top: .8rem;
+                            }
+
+                            .nosotros .container .row article img {
+                                width: 4.7rem;
+                                height: 4.7rem;
+                                transition: all 2s ease;
+                            }
+
+                            .nosotros .container .row article {
+                                min-height: 9rem;
+                                margin-top: 1rem;
+                            }
+
+                            .nosotros-boton {
+                                background-color: var(--principal) !important;
                                 text-decoration: none;
-                                margin-top: .5rem;
-                                background: #d26e2e;
-                                padding: 1rem 3rem;
+                                padding: 1rem 2rem;
+                                color: #fff;
+                                transition: all .5s ease;
+                            }
+
+                            .nosotros-boton:hover {
+                                background-color: var(--secundario) !important;
+                                text-decoration: none;
+                            }
+
+                            .nosotros .container span {
+                                color: var(--principal);
+                            }
+
+                            /*
+     * ─── EQUIPO ─────────────────────────────────────────────────────────────────────
+     */
+
+                            .team {
+                                background: url("../images/fondoTeam.png") no-repeat center center;
+                                background-attachment: fixed !important;
+                            }
+
+                            .team h2 {
+                                color: #fff;
+                                margin: 1rem 0;
+                            }
+
+                            .team .owl-carousel a h4 {
+                                color: #fff;
+                            }
+
+                            .team .owl-carousel a h4 span {
                                 color: var(--principal);
                                 font-weight: bold;
-                                font-size: 1.3rem;
                             }
-                        }
-                        /* Estilos MEdia LG */
-                        
-                        @media (min-width:992px) {
-                            html {
-                                font-size: 16px;
+
+                            .team .owl-carousel a img {
+                                margin-bottom: 1.3rem;
                             }
-                            .inovacion ul li {
+
+                            .team div.owl-nav {
                                 display: flex;
+                                justify-content: center;
                             }
-                            .inovacion ul li i {
-                                flex: 0 1 auto;
-                                margin-right: 1rem;
+
+                            .team div.owl-nav .owl-prev,
+                            .team div.owl-nav .owl-next {
+                                font-size: 3rem;
+                                color: var(--principal);
+                                transition: all .5s ease;
+                            }
+
+                            .team div.owl-nav .owl-prev {
+                                margin-right: 2rem;
+                            }
+
+                            .team div.owl-nav .owl-prev:hover,
+                            .team div.owl-nav .owl-next:hover {
+                                color: var(--secundario);
+                            }
+
+                            /* Agente de cambio */
+
+                            .cambio {
+                                background: white;
+                            }
+
+                            .cambio h2 {
+                                color: var(--principal);
+                                margin-bottom: 1rem;
+                            }
+
+                            .cambio .container .row ul li {
+                                list-style: none;
+                            }
+
+                            /*
+     * ─── FOOTER ─────────────────────────────────────────────────────────────────────
+     */
+
+                            footer.pie-pagina {
+                                background: var(--texto);
+                                color: #fff;
                                 text-align: center;
+                                font-size: .9rem;
                             }
-                            .inovacion ul li div.contenedor-eleccion {
-                                flex: 1 1 0px;
+
+                            .pie-pagina .redes-sociales {
+                                display: flex;
+                                justify-content: center;
+                                list-style: none;
+                                margin: 0;
+                                padding: 0;
                             }
-                            .inovacion ul li .contenedor-eleccion h4 {
-                                margin-top: 0;
-                                font-size: 1rem;
+
+                            .pie-pagina .redes-sociales a {
+                                color: var(--principal);
+                                font-size: 2rem;
+                                margin: 0 .5rem;
+                                opacity: .7;
+                                transition: all .5s ease;
                             }
-                            .inovacion ul li .contenedor-eleccion p {
-                                font-size: .85rem;
+
+                            .pie-pagina .redes-sociales a:hover {
+                                opacity: 1;
                             }
-                            .inovacion ul:first-child i {
-                                order: 1;
+
+                            .arriba {
+                                position: fixed;
+                                display: none;
+                                bottom: .6rem;
+                                right: 1rem;
+                                font-size: 3rem;
+                                color: var(--principal);
+                                text-decoration: none;
+                                z-index: 3;
+                                line-height: 0;
+                                transition: all .5s ease;
                             }
-                            .nosotros .container .row article img {
-                                width: 14rem;
-                                height: 14rem;
+
+                            .arriba:hover,
+                            .arriba:focus {
+                                outline: 0;
+                                text-decoration: none;
+                                color: var(--secundario);
                             }
-                        }
+
+                            /*
+     * ─── MEDIAQUERIES del navbar ───────────────────────────────────────────────────────────────
+     */
+
+                            @media (min-width:768px) {
+                                #menu-principal {
+                                    height: auto !important;
+                                    display: block;
+                                    flex: 0 1 auto;
+                                    margin-left: auto;
+                                    order: 1;
+                                }
+
+                                #menu-principal ul {
+                                    display: flex;
+                                    margin: 0;
+                                }
+
+                                #menu-principal ul li a {
+                                    padding: .8rem;
+                                    text-transform: capitalize;
+                                    margin: 0 .3rem;
+                                    border-top: 0px;
+                                    border-bottom: 4px solid transparent;
+                                    transition: all .5s ease;
+                                }
+
+                                #menu-principal ul li a.active,
+                                #menu-principal ul li a:hover {
+                                    color: var(--principal);
+                                    border-bottom: 4px solid;
+                                }
+
+                                .boton-buscar {
+                                    margin-left: 1rem;
+                                    margin-right: 0;
+                                    order: 2;
+                                }
+
+                                #bloque-buscar {
+                                    order: 3;
+                                    position: absolute;
+                                    width: 20rem;
+                                    right: 3rem;
+                                    top: 3rem;
+                                    transition: all .1s ease;
+                                }
+
+                                /* IMAGEN PROBLEMATICA */
+                                .problematica img {
+                                    width: 100%;
+                                    margin: 0;
+                                }
+
+                                .problematica div.imagen_problematica {
+                                    display: flex;
+                                }
+
+                                /* Nootros */
+                                .nosotros .container .row article img {
+                                    width: 10rem;
+                                    height: 10rem;
+                                }
+
+                                .nosotros .container .row article:hover img {
+                                    transform: rotatey(360deg);
+                                    transform-style: preserve-3d;
+                                }
+
+                                .nosotros .container .row article h4 {
+                                    font-size: 1.5rem;
+                                }
+
+                                .nosotros article h4 {
+                                    flex: 0 1 auto;
+                                    height: 3rem;
+                                }
+
+                                /* Gotitas */
+                                .cambio div ul li img {
+                                    width: 15rem;
+                                }
+
+                                .cambio div ul li {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                }
+
+                                .cambio div ul li p.remso_boton {
+                                    text-decoration: none;
+                                    margin-top: .5rem;
+                                    background: #d26e2e;
+                                    padding: 1rem 3rem;
+                                    color: var(--principal);
+                                    font-weight: bold;
+                                    font-size: 1.3rem;
+                                }
+                            }
+
+                            /* Estilos MEdia LG */
+
+                            @media (min-width:992px) {
+                                html {
+                                    font-size: 16px;
+                                }
+
+                                .inovacion ul li {
+                                    display: flex;
+                                }
+
+                                .inovacion ul li i {
+                                    flex: 0 1 auto;
+                                    margin-right: 1rem;
+                                    text-align: center;
+                                }
+
+                                .inovacion ul li div.contenedor-eleccion {
+                                    flex: 1 1 0px;
+                                }
+
+                                .inovacion ul li .contenedor-eleccion h4 {
+                                    margin-top: 0;
+                                    font-size: 1rem;
+                                }
+
+                                .inovacion ul li .contenedor-eleccion p {
+                                    font-size: .85rem;
+                                }
+
+                                .inovacion ul:first-child i {
+                                    order: 1;
+                                }
+
+                                .nosotros .container .row article img {
+                                    width: 14rem;
+                                    height: 14rem;
+                                }
+                            }
