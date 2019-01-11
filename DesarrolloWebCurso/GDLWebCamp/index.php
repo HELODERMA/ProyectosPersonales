@@ -56,23 +56,23 @@
                         $sql .= " INNER JOIN invitados ";
                         $sql .= " ON eventos.id_inv = invitados.invitado_id ";
                         $sql .= " AND eventos.id_categoria_evento = 1";
-                        $sql .= " order by evento_id LIMIT 2";
-                        // $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento,icono, nombre_invitado, apellido_invitado ";
-                        // $sql .= " From eventos ";
-                        // $sql .= " INNER JOIN categoria_evento ";
-                        // $sql .= " ON eventos.id_categoria_evento = categoria_evento.id_categoria ";
-                        // $sql .= " INNER JOIN invitados ";
-                        // $sql .= " ON eventos.id_inv = invitados.invitado_id ";
-                        // $sql .= " AND eventos.id_categoria_evento = 2";
-                        // $sql .= " order by evento_id LIMIT 2";
-                        // $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento,icono, nombre_invitado, apellido_invitado ";
-                        // $sql .= " From eventos ";
-                        // $sql .= " INNER JOIN categoria_evento ";
-                        // $sql .= " ON eventos.id_categoria_evento = categoria_evento.id_categoria ";
-                        // $sql .= " INNER JOIN invitados ";
-                        // $sql .= " ON eventos.id_inv = invitados.invitado_id ";
-                        // $sql .= " AND eventos.id_categoria_evento = 3";
-                        // $sql .= " order by evento_id LIMIT 2";
+                        $sql .= " order by evento_id LIMIT 2;";
+                        $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento,icono, nombre_invitado, apellido_invitado ";
+                        $sql .= " From eventos ";
+                        $sql .= " INNER JOIN categoria_evento ";
+                        $sql .= " ON eventos.id_categoria_evento = categoria_evento.id_categoria ";
+                        $sql .= " INNER JOIN invitados ";
+                        $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+                        $sql .= " AND eventos.id_categoria_evento = 2";
+                        $sql .= " order by evento_id LIMIT 2;";
+                        $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento,icono, nombre_invitado, apellido_invitado ";
+                        $sql .= " From eventos ";
+                        $sql .= " INNER JOIN categoria_evento ";
+                        $sql .= " ON eventos.id_categoria_evento = categoria_evento.id_categoria ";
+                        $sql .= " INNER JOIN invitados ";
+                        $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+                        $sql .= " AND eventos.id_categoria_evento = 3";
+                        $sql .= " order by evento_id LIMIT 2;";
 
                     } catch (\Exception $th) {
                         echo $th->getMessage();
@@ -80,11 +80,7 @@
         ?>
 
                 <?php
-
-                    if(!$conn->multi_query($sql)) {
-
-                     echo "Falló la multiconsulta: ";
-                       }
+                $conn->multi_query($sql);
                 ?>
 
                 <?php
@@ -100,26 +96,29 @@
                 <div id="<?php echo strtolower($evento['cat_evento']) ?>" class="info-curso ocultar clearfix">
                     <?php } ?>
                     <div class="detalle-evento">
-                        <h3>HTML5, CSS3 y JavaScript</h3>
-                        <p><i class="fas fa-clock"></i>16:00 hrs</p>
-                        <p><i class="fas fa-calendar"></i>10 de Dic</p>
-                        <p><i class="fas fa-user"></i>Josue Sandoval</p>
+                        <h3>
+                            <!-- utf8_encode() para cuando fallen los acentos -->
+                            <?php echo ($evento['nombre_evento']) ?>
+                        </h3>
+                        <p><i class="fas fa-clock"></i>
+                            <?php echo $evento['hora_evento'] ?> hrs</p>
+                        <p><i class="fas fa-calendar"></i>
+                            <?php echo $evento['fecha_evento'] ?>
+                        </p>
+                        <p><i class="fas fa-user"></i>
+                            <?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado'] ?>
+                        </p>
                     </div>
-
-                    <div class="detalle-evento">
-                        <h3>HTML5, CSS3 y JavaScript</h3>
-                        <p><i class="fas fa-clock"></i>20:00 hrs</p>
-                        <p><i class="fas fa-calendar"></i>10 de Dic</p>
-                        <p><i class="fas fa-user"></i>Josue Sandoval</p>
-                    </div>
-
+                    <?php if($i % 2 == 1): ?>
                     <a href="" class="button float-right">Ver todos</a>
                 </div>
+                <?php endif ?>
                 <?php $i++; ?>
                 <?php endforeach; ?>
+                <?php $resultado->free(); ?>
 
                 <?php
-                    } while ($conn->more_results() && $conn->next_results() );
+                    } while ($conn->more_results() && $conn->next_result() );
                 ?>
 
 
