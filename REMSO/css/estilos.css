@@ -181,6 +181,10 @@
                                 color: #fff;
                             }
                             
+                            .problematica p {
+                                font-size: 1.2rem;
+                            }
+                            
                             .problematica .container .row div p {
                                 font-size: 1rem;
                                 text-align: center;
@@ -191,7 +195,6 @@
                             }
                             
                             .problematica img {
-                                background: #fff;
                                 max-width: 80%;
                                 margin: 0 auto;
                                 display: block;
@@ -504,14 +507,14 @@
                                 .inovacion ul li .contenedor-eleccion p {
                                     font-size: .85rem;
                                 }
-                                .inovacion ul:first-child i {
-                                    order: 1;
-                                }
                                 .nosotros .container .row article img {
                                     width: 14rem;
                                     height: 14rem;
                                 }
                                 .nosotros div img.mundo {
                                     margin: 0;
+                                }
+                                .problematica p {
+                                    font-size: 3rem;
                                 }
                             }

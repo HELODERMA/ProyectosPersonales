@@ -44,6 +44,8 @@
         var etiquetas = document.getElementById('etiquetas');
         var camisas = document.getElementById('camisa_evento');
 
+        botonRegistro.disabled = true;
+
         // boton Calcular
 
         if (document.getElementById('calcular')) {
@@ -92,6 +94,9 @@
                     }
 
                     suma.innerHTML = "$ " + totalPagar.toFixed(2);
+
+                    botonRegistro.disabled = false;
+                    document.getElementById('total_pedido').value = totalPagar;
 
                 }
             }
