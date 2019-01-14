@@ -331,9 +331,11 @@
                                 margin-right: 2rem;
                             }
                             
-                            .team div.owl-nav .owl-prev:hover,
-                            .team div.owl-nav .owl-next:hover {
-                                color: var(--secundario);
+                            @media (min-width:992px) {
+                                .team div.owl-nav .owl-prev:hover,
+                                .team div.owl-nav .owl-next:hover {
+                                    color: var(--secundario);
+                                }
                             }
                             /* Agente de cambio */
                             
@@ -518,3 +520,4 @@
                                     font-size: 3rem;
                                 }
                             }
+                            /* Flechitas */
