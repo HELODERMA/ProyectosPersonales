@@ -1,0 +1,35 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.output {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.myQ {
+    font-style: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.btnAns {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+    width: 100px;
+}
+
+.btnAns:hover {
+    background-color: cornflowerblue;
+    color: azure;
+}

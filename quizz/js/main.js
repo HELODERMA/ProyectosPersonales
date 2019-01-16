@@ -11,12 +11,17 @@
         function loadOutput() {
             console.log(myData);
             let select = document.createElement('select');
+            let firstRun = true;
             for (let key in myData) {
                 console.log(key);
                 let option = document.createElement('option');
                 option.value = key;
                 option.textContent = key;
                 select.appendChild(option);
+                if (firstRun) {
+                    firstRun = false;
+                    quizzBuilder(key);
+                }
             }
             select.addEventListener('change', outputQuiz);
             document.querySelector('#dropDownList').appendChild(select);
@@ -43,6 +48,7 @@
             let holder = game.curQuiz[game.page];
             let div = document.createElement('div');
             div.textContent = holder.pregunta;
+            div.className += "myQ";
             output.appendChild(div);
 
             let tempArray = [];
@@ -73,6 +79,7 @@
                 let span = document.createElement('span');
                 span.checkme = tempArray[i].status;
                 span.addEventListener('click', checkAnswer);
+                span.className += "btnAns";
                 span.textContent = tempArray[i].answer;
                 div2.appendChild(span);
             }
