@@ -1,4 +1,13 @@
-<?php include "inc/layout/header.php";?>
+<?php
+    include "inc/layout/header.php";
+    include "inc/funciones/funciones.php";
+
+    $id = filter_var($_GET['id'],FILTER_SANITIZE_NUMBER_INT);
+
+    $resultado = obtenerContacto($id);
+    $contacto = $resultado->fetch_assoc();
+
+?>
 
 <div class="contenedor-barra">
     <div class="contenedor barra">

@@ -217,6 +217,10 @@ table tbody button {
     text-decoration: none;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 .btn-editar {
     color: var(--secundario);
 }
@@ -225,8 +229,10 @@ table tbody button {
     color: var(--primario);
 }
 
-.contenedor-tabla {
-    overflow: scroll;
+@media only screen and (max-width:768px) {
+    .contenedor-tabla {
+        overflow: scroll;
+    }
 }
 
 .total-contactos {

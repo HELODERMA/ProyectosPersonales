@@ -6,6 +6,11 @@ eventListener();
 function eventListener(params) {
     //Cuando el formulario se ejecuta
     formularioContactos.addEventListener('submit', leerFormulario);
+
+    // Listener para eliminar
+    if (listadoContactos) {
+        listadoContactos.addEventListener('click', eliminarContacto);
+    }
 }
 
 function leerFormulario(e) {
@@ -33,6 +38,10 @@ function leerFormulario(e) {
             insertarDB(infoContacto);
         } else {
             // Editar contacto
+            // Leer ID
+            const idRegistro = document.querySelector('#id').value;
+            infoContacto.append('id', idRegistro);
+            actualizarRegistro(infoContacto);
         }
     }
 }
@@ -118,8 +127,75 @@ function insertarDB(datos) {
     // PASO1: LEER ERRORES
 }
 
-// Notificacion en pantalla
+function actualizarRegistro(datos) {
+    // console.log(...datos);
+    // Crear el objeto
+    const xhr = new XMLHttpRequest();
 
+    // Abrir la conexion
+    xhr.open('POST', 'inc/modelos/modelo-contactos.php', true);
+
+    // Leer la respuesta
+    xhr.onload = function() {
+        if (this.status == 200) {
+            const respuesta = JSON.parse(xhr.responseText);
+            if (respuesta.respuesta == 'correcto') {
+                mostrarNotificacion('Contacto Editado Correctamente', 'correcto');
+            } else {
+                mostrarNotificacion('Hubo en error', 'error');
+            }
+            // Redireccionar
+            setTimeout(() => {
+                window.location.href = 'index.php';
+            }, 4000);
+        }
+    }
+
+    // enviar la peticion
+    xhr.send(datos);
+}
+
+// Eliminar contacto
+function eliminarContacto(e) {
+    if (e.target.parentElement.classList.contains('btn-borrar')) {
+        const id = e.target.parentElement.getAttribute('data-id');
+        // Preguntar al usuario
+        const respuesta = confirm('¿Estas seguro(a)?');
+
+        // llamado a ajax
+        if (respuesta) {
+            // Crear el objeto
+            const xhr = new XMLHttpRequest();
+
+            // Abrir la conexion
+            xhr.open('GET', `inc/modelos/modelo-contactos.php?id=${id}&accion=borrar`, true);
+
+            // Leer la respuesta
+            xhr.onload = function() {
+                    if (this.status == 200) {
+                        const resultado = JSON.parse(xhr.responseText);
+                        console.log(resultado);
+                        if (resultado.respuesta == 'correcto') {
+
+                            //Eliminar el registro del DOM
+                            e.target.parentElement.parentElement.parentElement.remove();
+
+                            // Mostrar notificacion
+                            mostrarNotificacion('Contacto eliminado', 'correcto');
+
+                        }
+                    }
+                }
+                // Enviar la peticion
+            xhr.send();
+        } else {
+            // Mostrar Notificacion
+            mostrarNotificacion('Contacto no eliminado...', 'error');
+        }
+    }
+}
+
+// Notificacion en pantalla
 function mostrarNotificacion(mensaje, clase) {
     const notificacion = document.createElement('div');
     notificacion.classList.add(clase, 'notificacion', 'sombra');
