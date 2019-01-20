@@ -14,7 +14,7 @@
         >{{ message.content }}</message-conversation-component>
 
         <div slot="footer">
-          <b-form class="mb-0" @submit.prevent="postMessage">
+          <b-form class="mb-0" @submit.prevent="postMessage" autocomplete="off">
             <b-input-group>
               <b-form-input
                 class="text-center"
@@ -24,7 +24,7 @@
               ></b-form-input>
 
               <b-input-group-append>
-                <b-button variant="primary">Enviar</b-button>
+                <b-button type="submit" variant="primary">Enviar</b-button>
               </b-input-group-append>
             </b-input-group>
           </b-form>
@@ -77,8 +77,11 @@ export default {
       };
       axios.post("/api/messages", params).then(response => {
         console.log(response.data);
-        this.newMessage = "";
-        this.getMessages();
+
+        if (response.data) {
+          this.newMessage = "";
+          this.getMessages();
+        }
       });
     }
   }

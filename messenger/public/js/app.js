@@ -33702,8 +33702,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       };
       axios.post("/api/messages", params).then(function (response) {
         console.log(response.data);
-        _this2.newMessage = "";
-        _this2.getMessages();
+
+        if (response.data) {
+          _this2.newMessage = "";
+          _this2.getMessages();
+        }
       });
     }
   }
@@ -33754,6 +33757,7 @@ var render = function() {
                     "b-form",
                     {
                       staticClass: "mb-0",
+                      attrs: { autocomplete: "off" },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
@@ -33785,7 +33789,9 @@ var render = function() {
                             [
                               _c(
                                 "b-button",
-                                { attrs: { variant: "primary" } },
+                                {
+                                  attrs: { type: "submit", variant: "primary" }
+                                },
                                 [_vm._v("Enviar")]
                               )
                             ],
