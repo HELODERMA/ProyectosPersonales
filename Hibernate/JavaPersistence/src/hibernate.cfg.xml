@@ -9,7 +9,7 @@
         <!-- Usuario de la B.D. -->
         <property name="connection.username">root</property>
         <!-- Contraseña de la B.D. -->
-        <property name="connection.password">JOsa270395</property>
+        <property name="connection.password"></property>
 
         <!-- Dialecto SQL -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>

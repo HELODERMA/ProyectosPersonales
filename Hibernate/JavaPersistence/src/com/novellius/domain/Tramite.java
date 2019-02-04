@@ -33,8 +33,14 @@ public class Tramite {
 		return idTram;
 	}
 	public void setIdTram(int idTram) {
-		this.idTram = idTram;
+		this.idTram = idTram;		
 	}
+	
+	@Override
+	public String toString() {
+		return "Tramite [idTram=" + idTram + ", tipoTram=" + tipoTram + ", fhcTram=" + fhcTram + "]";
+	}
+
 	public String getTipoTram() {
 		return tipoTram;
 	}
