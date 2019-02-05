@@ -33345,17 +33345,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["variant"],
-  data: function data() {
-    return {
-      name: "Daniela Rosales",
-      lastMessage: "Te amo tepornga <3",
-      lastTime: "1:37 pm"
-    };
+  props: {
+    variant: String,
+    conversation: Object
   },
-  mounted: function mounted() {
-    console.log("Component mounted.");
-  }
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -33400,10 +33397,12 @@ var render = function() {
               attrs: { cols: "6", "align-self": "center" }
             },
             [
-              _c("p", { staticClass: "mb-1" }, [_vm._v(_vm._s(_vm.name))]),
+              _c("p", { staticClass: "mb-1" }, [
+                _vm._v(_vm._s(_vm.conversation.contact_name))
+              ]),
               _vm._v(" "),
               _c("p", { staticClass: "text-muted small mb-1" }, [
-                _vm._v(_vm._s(_vm.lastMessage))
+                _vm._v(_vm._s(_vm.conversation.last_message))
               ])
             ]
           ),
@@ -33416,7 +33415,7 @@ var render = function() {
             },
             [
               _c("p", { staticClass: "text-muted small" }, [
-                _vm._v(_vm._s(_vm.lastTime))
+                _vm._v(_vm._s(_vm.conversation.last_time))
               ])
             ]
           )
@@ -33507,13 +33506,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      convarsations: []
+    };
   },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    this.getConversations();
+  },
+
+  methods: {
+    getConversations: function getConversations() {
+      var _this = this;
+
+      axios.get("/api/conversations").then(function (response) {
+        _this.convarsations = response.data;
+      });
+    },
+    selectConversation: function selectConversation() {
+      console.log('select');
+    }
   }
 });
 
@@ -33542,13 +33563,13 @@ var render = function() {
       _vm._v(" "),
       _c(
         "b-list-group",
-        [
-          _c("contact-component", { attrs: { variant: "dark" } }),
-          _vm._v(" "),
-          _c("contact-component", { attrs: { variant: "" } }),
-          _vm._v(" "),
-          _c("contact-component", { attrs: { variant: "secondary" } })
-        ],
+        _vm._l(_vm.convarsations, function(conversation) {
+          return _c("contact-component", {
+            key: conversation.id,
+            attrs: { conversation: conversation },
+            on: { click: _vm.selectConversation }
+          })
+        }),
         1
       )
     ],
@@ -33677,7 +33698,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       messages: [],
-      newMessage: ""
+      newMessage: "",
+      contactId: 2
     };
   },
   mounted: function mounted() {
@@ -33688,7 +33710,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getMessages: function getMessages() {
       var _this = this;
 
-      axios.get("/api/messages").then(function (response) {
+      axios.get("/api/messages?contact_id=" + this.contactId).then(function (response) {
         // console.log(response.data);
         _this.messages = response.data;
       });
@@ -33697,7 +33719,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this2 = this;
 
       var params = {
-        to_id: 2,
+        to_id: this.contactId,
         content: this.newMessage
       };
       axios.post("/api/messages", params).then(function (response) {

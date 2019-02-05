@@ -1,5 +1,6 @@
 const formularioContactos = document.querySelector('#contacto'),
-    listadoContactos = document.querySelector('#listado-contactos tbody');
+    listadoContactos = document.querySelector('#listado-contactos tbody'),
+    inputBuscador = document.querySelector('#buscar');
 
 eventListener();
 
@@ -11,6 +12,13 @@ function eventListener(params) {
     if (listadoContactos) {
         listadoContactos.addEventListener('click', eliminarContacto);
     }
+
+    // Input buscador
+    inputBuscador.addEventListener('input', buscarContactor);
+
+    // LLamado a la funcion que muestra numero de contactos
+    numeroContactos();
+
 }
 
 function leerFormulario(e) {
@@ -120,6 +128,9 @@ function insertarDB(datos) {
                 // Mostrar la notificacion
                 mostrarNotificacion('Contacto creado correctamente', 'correcto');
 
+                // ACtualizar numero
+                numeroContactos();
+
             }
         }
         // PASO1: ENVIAR LOS DATOS
@@ -183,6 +194,9 @@ function eliminarContacto(e) {
                             // Mostrar notificacion
                             mostrarNotificacion('Contacto eliminado', 'correcto');
 
+                            // ACtualizar numero
+                            numeroContactos();
+
                         }
                     }
                 }
@@ -215,4 +229,36 @@ function mostrarNotificacion(mensaje, clase) {
         }, 3000);
     }, 100);
 
+}
+
+// Buscador de Registros
+function buscarContactor(e) {
+    const expresion = new RegExp(e.target.value, "i"),
+        registros = document.querySelectorAll('tbody tr');
+
+    registros.forEach(registro => {
+        registro.style.display = 'none';
+        // console.log(registro.childNodes);
+        if (registro.childNodes[1].textContent.replace(/\s/g, " ").search(expresion) != -1) {
+            registro.style.display = 'table-row';
+        }
+        numeroContactos();
+    });
+}
+
+// Mostrar el numero de contactos
+function numeroContactos() {
+    const totalContactos = document.querySelectorAll('tbody tr'),
+        contenedorNumero = document.querySelector('.total-contactos span');
+    console.log(totalContactos.length);
+    let total = 0;
+
+    totalContactos.forEach(contacto => {
+        if (contacto.style.display === '' | contacto.style.display === 'table-row') {
+            total++;
+        }
+    });
+
+    // console.log(total);
+    contenedorNumero.textContent = total;
 }

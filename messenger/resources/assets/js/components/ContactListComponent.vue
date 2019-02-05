@@ -6,11 +6,18 @@
 
     <b-list-group>
       <!-- Insercion de un componente -->
-      <contact-component variant="dark"></contact-component>
+      <contact-component
+        v-for="conversation in convarsations"
+        :key="conversation.id"
+        :conversation="conversation"
+        @click="selectConversation"
+      ></contact-component>
+
+      <!-- <contact-component variant="dark"></contact-component>
 
       <contact-component variant></contact-component>
 
-      <contact-component variant="secondary"></contact-component>
+      <contact-component variant="secondary"></contact-component>-->
     </b-list-group>
   </div>
 </template>
@@ -18,11 +25,23 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      convarsations: []
+    };
   },
 
   mounted() {
-    console.log("Component mounted.");
+    this.getConversations();
+  },
+  methods: {
+    getConversations() {
+      axios.get("/api/conversations").then(response => {
+        this.convarsations = response.data;
+      });
+    },
+    selectConversation(){
+      console.log('select');
+    }
   }
 };
 </script>
