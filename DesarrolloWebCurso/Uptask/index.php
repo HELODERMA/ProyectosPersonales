@@ -58,18 +58,28 @@ if (isset($_GET['id_proyecto'])) {
                 <?php
                  // Obtener las tareas del proyecto actual
                 $tareas = obtenerTareasProyecto($id_proyecto);
-                echo "<pre>";
-                var_dump($tareas);
-                echo "</pre>";
-                ?>
+                if ($tareas->num_rows > 0 ) {
+                    foreach ($tareas as $tarea) : ?>
                 <li id="tarea:<?php echo $tarea['id'] ?>" class="tarea">
-                    <p>Cambiar el Logotipo</p>
+                    <p><?php echo $tarea['nombre'] ?></p>
                     <div class="acciones">
-                        <i class="far fa-check-circle"></i>
+                        <i class="far fa-check-circle <?php echo $tarea['estado'] === '1' ? 'completo' : '' ?>"></i>
                         <i class="fas fa-trash"></i>
                     </div>
                 </li>
+                <?php endforeach;
+                }else{
+                    echo "<p class='sinTareas'>No hay tareas en este proyecto</p>";
+                }
+                ?>
+
             </ul>
+        </div>
+        <div class="avance">
+                <h2>Avance del proyecto:</h2>
+                <div id="barra-avance" class="barra-avance">
+                    <div id="porcentaje" class="porcentaje"><p class="textoPorcentaje"></p></div>
+                </div>
         </div>
     </main>
 </div>

@@ -33,7 +33,7 @@ function obtenerNombreProyecto($id = null)
     }
 }
 
-// Obtener taread del proyecto
+// Obtener tareas del proyecto
 function obtenerTareasProyecto($id = null)
 {
     include 'conexion.php';

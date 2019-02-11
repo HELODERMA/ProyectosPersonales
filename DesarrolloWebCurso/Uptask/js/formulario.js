@@ -42,9 +42,11 @@ function validarRegistro(e) {
                     if (respuesta.tipo === 'crear') {
                         swal("Usuario Creado", "Usuario creado exitosamente", "success");
                     } else if (respuesta.tipo === 'login') {
+                        console.log("puto");
                         swal("Login correcto", "Ir al dashboard", "success")
                             .then(result => {
                                 if (result.value) {
+                                    console.log("redirect");
                                     window.location.href = 'index.php';
                                 }
                             });
